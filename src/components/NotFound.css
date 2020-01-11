@@ -1,0 +1,47 @@
+.notFound {
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+
+    background-color: #33414E;
+    text-align: center;
+    bottom: calc(50% - 75px);
+    left: calc(50% - 75px);   
+    box-shadow: 9px 10px 16px -12px rgba(0,0,0,0.75);
+}
+
+.notFound p {
+   
+    margin: calc(50% - 15px) 10px;
+}
+
+.delSpan {
+    cursor: pointer;
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    color: rgba(0,0,0,0);
+    top: 10px;
+    right: 10px;
+
+}
+.delSpan::before, .delSpan::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    
+    margin-top: -1px;
+    background: #000;
+  }
+  .delSpan::before {
+     transform: rotate(45deg);
+  }
+  .delSpan::after {
+     transform: rotate(-45deg);
+  }

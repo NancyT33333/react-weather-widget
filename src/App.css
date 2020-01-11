@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+
+
+
+.outerDiv {
+
+  position: relative;
+}
+
+.p_pseudoForm {
+  margin: 0px calc(30vw);
+  width: 40vw;
+}
+
+.p_pseudoForm input {
+  border: 1px solid #555;
+  background-color: rgb(159, 172, 185);
+  padding: 5px;
+  box-shadow: 9px 10px 16px -12px rgba(0,0,0,0.75);
+  color: #11212F;
+  font-family: inherit;
+  
+}
+.p_pseudoForm input:nth-of-type(1) {
+  width: 80%;
+
+}
+
+
+.p_pseudoForm input:nth-of-type(2) {
+  background-color: #AB9576;
+  color: #493517;
+
+}
+.outerDiv h1 {
+  text-align: center;
+}
