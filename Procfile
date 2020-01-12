@@ -1,1 +1,1 @@
-web: npm start & npm run localproxy & wait -n
+web: npm start & npm run corsanywhere & wait -n
