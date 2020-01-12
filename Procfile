@@ -1,1 +1,1 @@
-web: npm start & npm run corsanywhere & wait -n
+web: npm start & wait -n
