@@ -1,11 +1,12 @@
 import './OneCity.css';
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env';
 
 
 function OneCity (props) {
-
-  const APIKEY = process.env.APIKEY;  
+  const env = runtimeEnv();
+  const APIKEY = env.APIKEY;  
   const APIURL = "https://cors-anywhere.herokuapp.com/openweathermap.org/data/2.5/weather";
   // for local cors proxy:   const APIURL = "http://localhost:8010/proxy/data/2.5/weather";
   const cityName = props.data;
