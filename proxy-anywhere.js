@@ -2,11 +2,19 @@
 var host = process.env.PORT ? '0.0.0.0' : '127.0.0.1';
 var port = process.env.PORT || 8080;
 
-var cors_proxy = require('cors-anywhere');
-cors_proxy.createServer({
-    originWhitelist: [], // Allow all origins
-    requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
-}).listen(port, host, function() {
-    console.log('Running CORS Anywhere on ' + host + ':' + port);
-});
+(function() {
+    var cors_api_host = 'cors-anywhere.herokuapp.com';
+    var cors_api_url = 'https://' + cors_api_host + '/';
+    var slice = [].slice;
+    var origin =  'http://' + host;
+    var open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function() {
+        var args = slice.call(arguments);
+        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+            targetOrigin[1] !== cors_api_host) {
+            args[1] = cors_api_url + args[1];
+        }
+        return open.apply(this, args);
+    };
+})();

@@ -7,7 +7,7 @@ function OneCity (props) {
   var port = process.env.PORT || 8080;
   var host = process.env.PORT ? '0.0.0.0' : '127.0.0.1';
   const APIKEY = "b6907d289e10d714a6e88b30761fae22";
-  const APIURL = "http://"+ host + ":"+ port+ "/openweathermap.org/data/2.5/weather";
+  const APIURL = "http://openweathermap.org/data/2.5/weather";
   // for local cors proxy:   const APIURL = "http://localhost:8010/proxy/data/2.5/weather";
   const cityName = props.data;
 
